@@ -15,7 +15,7 @@
 # Licensed under GPLv3 or later
 ######################################################################
 
-read -p "Would you like to install version 11 or 20? " GVMVERSION
+#read -p "Would you like to install version 11 or 20? " GVMVERSION
 
 #validate input
 if [[ $GVMVERSION = "11" ]] || [[ $GVMVERSION = "20" ]]; then
@@ -26,7 +26,7 @@ else
     exit 1
 fi
 
-#GVMVERSION='11'
+GVMVERSION='20'
 
 apt-get update
 apt-get upgrade -y 
@@ -401,7 +401,7 @@ sudo -Hiu gvm echo "sleep 10" | sudo -Hiu gvm tee -a /opt/gvm/scan.sh
 sudo -Hiu gvm echo -e "/opt/gvm/sbin/gvmd --verify-scanner=UUID" | sed 's/UUID/\$UUID/g' | sudo -Hiu gvm tee -a /opt/gvm/scan.sh
 
 # Create OpenVAS (GVM 11) Admin
-sudo -Hiu gvm echo -e "/opt/gvm/sbin/gvmd --create-user gvmadmin --password=welovemiles" | sudo -Hiu gvm tee -a /opt/gvm/scan.sh
+sudo -Hiu gvm echo -e "/opt/gvm/sbin/gvmd --create-user gvmadmin --password=peepoHappy322" | sudo -Hiu gvm tee -a /opt/gvm/scan.sh
 
 if [ $GVMVERSION = "20" ]; then
     # Update feed sync GVMD_Data enable
@@ -515,6 +515,6 @@ if [ $GVMVERSION = "20" ]; then
     echo "for 24 hours and let cron handle it."
     echo ""
 fi
-echo "Username is gvmadmin and pasword is welovemiles"
+echo "Username is gvmadmin and pasword is peepoHappy322"
 echo "Remember to change this default password"
 echo "sudo -Hiu gvm gvmd --user=gvmadmin --new-password=<PASSWORD>"
